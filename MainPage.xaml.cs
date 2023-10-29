@@ -32,12 +32,9 @@ public partial class MainPage : ContentPage
 
 	private void GView_PointerMoved(object sender, PointerEventArgs e)
 	{
-		if (_isInteracting)
-		{
-			_lastPoint.X = (float)e.GetPosition(GView).Value.X;
-			_lastPoint.Y = (float)e.GetPosition(GView).Value.Y;
-			StatusLabel.Text = $"X: {_lastPoint.X:N2} Y: {_lastPoint.Y:N2} (GView_PointerMoved)";
-		}
+		_lastPoint.X = (float)e.GetPosition(GView).Value.X;
+		_lastPoint.Y = (float)e.GetPosition(GView).Value.Y;
+		StatusLabel.Text = $"X: {_lastPoint.X:N2} Y: {_lastPoint.Y:N2} (GView_PointerMoved)";
 	}
 
 
