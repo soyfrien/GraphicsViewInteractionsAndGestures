@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GraphicsViewInteractionsAndGestures.MainPage"
+             Title="GraphicsView Interactions and Gestures">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <GraphicsView x:Name="GView"
+                      Grid.Row="0"
+                      StartInteraction="StartInteraction"
+                      DragInteraction="DragInteraction"
+                      EndInteraction="EndInteraction">
+            <GraphicsView.GestureRecognizers>
+                <!-- All gestures must be commented out for above interactions to fire on Android-->
+                <TapGestureRecognizer Tapped="GView_Tapped"
+                                      Buttons="Primary" />
+                <PointerGestureRecognizer PointerMoved="GView_PointerMoved" />
+            </GraphicsView.GestureRecognizers>
+        </GraphicsView>
+        <Label x:Name="StatusLabel"
+               Grid.Row="1"
+               HorizontalOptions="CenterAndExpand"/>
+    </Grid>
+</ContentPage>
